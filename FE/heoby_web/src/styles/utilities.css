@@ -1,0 +1,130 @@
+@utility bg-gradient-primary {
+  background: linear-gradient(135deg, #eeedec, #f0e6c6);
+}
+
+/* 카드 서피스 */
+.custom-surface-card {
+  border-radius: 20px;
+  border: 2px solid var(--surface-card-border);
+  background: var(--surface-card-bg);
+
+  /* box-shadow: var(--surface-card-shadow); */
+}
+
+/* Box header */
+.custom-box-title-bar {
+  width: 100%;
+  padding: 1rem 1rem 0.5rem;
+}
+
+.custom-box-title-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.custom-divider {
+  width: 100%;
+  height: 3px;
+  background-color: #f7f4ed;
+}
+
+/* Page-specific layout utilities moved to src/styles/pages */
+
+/* ===== Utilities (v4: 그냥 CSS로 정의) ===== */
+
+/* 링크 가독성: 본문과 명확히 구분 */
+.link-readable {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* 강한 포커스 표시 (focus-visible 권장) */
+/* 이 클래스는 더 이상 @apply에 사용되지 않고, 단지 속성 정의를 위한 원본입니다. */
+.focus-strong:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* 최소 터치 타깃 보장 */
+.tap-target {
+  min-width: var(--spacing-tap);
+  min-height: var(--spacing-tap);
+}
+
+/* ===== Components ===== */
+
+/* Button (고대비, 큰 터치, 상태 구분) */
+.btn {
+  @apply inline-flex items-center justify-center
+    min-w-tap min-h-tap
+    px-4 font-bold rounded-lg
+    text-white bg-primary-600
+    transition-transform duration-150;
+}
+.btn:hover {
+  filter: brightness(0.96);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:focus-visible {
+  /* 💡 수정됨: focus-strong 속성을 직접 복사 */
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn--ghost {
+  @apply bg-transparent text-primary-600 border-2 border-primary-600;
+}
+.btn--danger {
+  @apply bg-danger-600 text-white;
+}
+.btn--muted {
+  @apply bg-bg-alt text-fg border border-neutral-300;
+}
+
+/* Form Field (라벨/힌트/오류/성공 피드백) */
+.field {
+  display: grid;
+  gap: 6px;
+}
+.field__label {
+  @apply font-bold text-sm;
+}
+.field__control {
+  @apply min-h-tap px-3 py-2 rounded-md border text-fg bg-bg;
+  border-color: oklch(65% 0 0);
+}
+.field__control:focus-visible {
+  /* 💡 수정됨: focus-strong 속성을 직접 복사 */
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-color: oklch(25% 0 0);
+}
+.field__hint {
+  color: oklch(40% 0 0);
+  @apply text-sm;
+}
+.field__error {
+  @apply text-danger-600 font-bold;
+}
+.field__success {
+  @apply text-success-600 font-bold;
+}
+
+/* Navigation (현재 위치 가시화) */
+.nav {
+  display: grid;
+  gap: var(--spacing-gap);
+}
+.nav__item {
+  @apply grid items-center rounded-md px-3 py-2 min-h-tap;
+}
+.nav__item--current {
+  @apply font-bold bg-bg-alt;
+  border-left: 4px solid var(--color-primary-600);
+}

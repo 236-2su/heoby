@@ -1,0 +1,98 @@
+name: heoby_mobile
+description: "A new Flutter project."
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Routing
+  go_router: ^14.6.2
+
+  # Networking
+  dio: ^5.7.0
+  http: ^1.2.0
+
+  # Code Generation
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+
+  # Dependency Injection
+  get_it: ^8.0.3
+
+  # Utils
+  logger: ^2.5.0
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.3
+  lucide_icons_flutter: ^3.1.5
+  flutter_dotenv: ^5.2.1
+  intl: ^0.19.0
+  url_launcher: ^6.3.1
+  geocoding: ^2.0.5
+
+  # Maps
+  flutter_naver_map: ^1.4.1+1
+
+  # Firebase
+  firebase_core: ^3.8.1
+  firebase_messaging: ^15.1.5
+  flutter_local_notifications: ^17.1.0
+
+  # WebRTC
+  flutter_webrtc: ^0.12.3
+  web_socket_channel: ^3.0.1
+  flutter_svg: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  # Code Generators
+  build_runner: ^2.4.13
+  riverpod_generator: ^2.6.2
+  freezed: ^2.5.7
+  json_serializable: ^6.9.2
+  flutter_launcher_icons: ^0.12.0
+  flutter_native_splash: ^2.2.20
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - .env
+    - assets/icons/
+
+  fonts:
+    - family: NanumMyeongjo
+      fonts:
+        - asset: assets/fonts/NanumMyeongjo.ttf
+        - asset: assets/fonts/NanumMyeongjoBold.ttf
+          weight: 700
+        - asset: assets/fonts/NanumMyeongjoExtraBold.ttf
+          weight: 800
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: assets/icons/app_icon.png
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#F4EFE5"
+  image: assets/icons/app_icon.png
+  android: true
+  ios: true

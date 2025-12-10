@@ -1,0 +1,16 @@
+services:
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: heoby-mqtt
+    ports:
+      - "${MQTT_PORT:-1883}:1883"
+      - "${MQTT_TLS_PORT:-8883}:8883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./mosquitto.passwd:/mosquitto/config/mosquitto.passwd:ro
+    restart: unless-stopped
+
+networks:
+  default:
+    name: heoby-mqtt-network
+    driver: bridge

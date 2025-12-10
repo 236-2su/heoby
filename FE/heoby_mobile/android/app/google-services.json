@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1087370190613",
+    "project_id": "heoby-7afdf",
+    "storage_bucket": "heoby-7afdf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087370190613:android:91ee18c9e62557e1b0131c",
+        "android_client_info": {
+          "package_name": "com.sunshinemoongit.heoby_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeBLC27EB4BK77gPZVHUswpyt0BWAvv-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

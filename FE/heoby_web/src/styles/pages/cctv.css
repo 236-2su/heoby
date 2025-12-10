@@ -1,0 +1,37 @@
+/* CCTV page grid */
+.custom-cctv-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "video"
+    "list";
+}
+
+.custom-cctv-grid__video {
+  grid-area: video;
+}
+
+.custom-cctv-grid__list {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* overflow: hidden; */
+}
+
+@media (min-width: 1024px) {
+  .custom-cctv-grid {
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-areas: "list video";
+    align-items: start;
+  }
+
+  .custom-cctv-grid__list {
+    height: 100%;
+  }
+
+  .custom-cctv-grid__list > * {
+    height: 100%;
+  }
+}

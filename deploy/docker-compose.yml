@@ -1,0 +1,45 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend/Dockerfile
+    env_file:
+      - ../config/${ENV_STAGE}/.env.backend
+    volumes:
+      - ../config/${ENV_STAGE}/heoby-7afdf-firebase-adminsdk-fbsvc-3c3337bafc.json:/app/heoby-7afdf-firebase-adminsdk-fbsvc-3c3337bafc.json:ro
+    depends_on:
+      - redis
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/frontend/Dockerfile
+      args:
+        ENV_STAGE: ${ENV_STAGE}
+    env_file:
+      - ../config/${ENV_STAGE}/.env.frontend
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    hostname: k13e106.p.ssafy.io
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  redis-data:

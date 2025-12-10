@@ -1,0 +1,17 @@
+services:
+  backend:
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8081:8080"
+
+  frontend:
+    build:
+      args:
+        VITE_BASE_PATH: /
+    ports:
+      - "3000:80"
+
+  redis:
+    ports:
+      - "6379:6379"

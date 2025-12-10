@@ -1,0 +1,59 @@
+/* Map page grid */
+.custom-map-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "map"
+    "detail"
+    "list";
+}
+
+.custom-map-grid__map {
+  grid-area: map;
+}
+
+.custom-map-grid__list {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-map-grid__list > * {
+  flex: 1;
+}
+
+.custom-map-grid__detail {
+  grid-area: detail;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-map-grid__detail > * {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .custom-map-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "map map"
+      "list detail";
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-map-grid {
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: 3fr 2fr;
+    grid-template-areas:
+      "list map"
+      "list detail";
+  }
+
+  .custom-map-grid__map > *,
+  .custom-map-grid__detail > *,
+  .custom-map-grid__list > * {
+    height: 100%;
+  }
+}

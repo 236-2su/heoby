@@ -1,0 +1,79 @@
+/* Notification page vertical spacing */
+.notification-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-block: 2rem;
+  padding-bottom: calc(2rem + 5rem); /* 기본 padding + BottomNavBar 높이 (모바일) */
+  min-height: calc(100vh - 12rem);
+  height: calc(100vh - 12rem);
+  max-height: calc(100vh - 12rem);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .notification-page {
+    padding-bottom: 2rem; /* 데스크톱에서는 BottomNavBar 없음 */
+  }
+}
+
+/* Common vertical stack inside the page */
+.notification-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Responsive grid for list/detail layout */
+.notification-grid {
+  display: grid;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.notification-grid__list,
+.notification-grid__detail {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-grid__detail {
+  display: none;
+}
+
+.notification-grid__list > .custom-surface-card,
+.notification-grid__detail > .custom-surface-card {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .notification-grid {
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    grid-template-areas: "list detail";
+  }
+
+  .notification-grid__list {
+    grid-area: list;
+  }
+
+  .notification-grid__detail {
+    grid-area: detail;
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .notification-grid {
+    grid-template-columns: minmax(360px, 400px) minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,93 @@
+/* Dashboard responsive grid (phone/tablet/desktop) */
+.custom-dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "working notification"
+    "weather weather"
+    "heoby heoby";
+}
+
+.custom-dashboard-working {
+  aspect-ratio: 1;
+  grid-area: working;
+}
+
+.custom-dashboard-notification {
+  aspect-ratio: 1;
+  grid-area: notification;
+}
+
+.custom-dashboard-weather {
+  grid-area: weather;
+}
+
+.custom-dashboard-heoby {
+  grid-area: heoby;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.custom-dashboard-heoby > * {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Heoby list responsive heights */
+.heoby-list-responsive {
+  height: 100%;
+  max-height: 500px;
+}
+
+.custom-dashboard-map {
+  display: none;
+  grid-area: map;
+}
+
+.custom-dashboard-map > * {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .custom-dashboard-grid {
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+      "working heoby"
+      "notification heoby"
+      "weather weather";
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-dashboard-grid {
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "working map"
+      "notification map"
+      "heoby map"
+      "weather weather";
+    align-items: stretch;
+  }
+
+  .custom-dashboard-map {
+    display: block;
+  }
+
+  .custom-dashboard-heoby,
+  .custom-dashboard-map {
+    height: 100%;
+  }
+
+  .custom-dashboard-heoby > *,
+  .custom-dashboard-map > * {
+    height: 100%;
+  }
+
+  .heoby-list-responsive {
+    max-height: 400px;
+  }
+}
