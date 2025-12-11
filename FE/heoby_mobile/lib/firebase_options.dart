@@ -50,17 +50,17 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBeBLC27EB4BK77gPZVHUswpyt0BWAvv-o',
-    appId: '1:1087370190613:android:91ee18c9e62557e1b0131c',
-    messagingSenderId: '1087370190613',
+    apiKey: 'API_KEY_PLACEHOLDER',
+    appId: 'APP_ID_PLACEHOLDER',
+    messagingSenderId: 'SENDER_ID_PLACEHOLDER',
     projectId: 'heoby-7afdf',
     storageBucket: 'heoby-7afdf.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAxq0djxrKalP4arJmS6IS50Q6jz1LD1sU',
-    appId: '1:1087370190613:ios:244509b2c2861af8b0131c',
-    messagingSenderId: '1087370190613',
+    apiKey: 'API_KEY_PLACEHOLDER',
+    appId: 'APP_ID_PLACEHOLDER',
+    messagingSenderId: 'SENDER_ID_PLACEHOLDER',
     projectId: 'heoby-7afdf',
     storageBucket: 'heoby-7afdf.firebasestorage.app',
     iosBundleId: 'com.sunshinemoongit.heobyMobile',
